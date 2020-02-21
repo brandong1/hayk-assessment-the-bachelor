@@ -22,7 +22,24 @@ end
   #   end
 
 def get_contestant_name(data, occupation)
+  data.each do |season, contestant_data|
+    contestant_data.each do |contestant|
+      contestant.each do |key,value|
+        if value == occupation
+          return contestant["name"]
+        end
+      end
+    end
+  end
   
+  # data.each do |season, contestant_data|
+  #   contestant_data.each do |contestant|
+  #     contestant.each |job|
+  #     if job == occupation
+  #       return contestant["name"]
+  #     end
+  #   end
+  # end
 end
 
 def count_contestants_by_hometown(data, hometown)
