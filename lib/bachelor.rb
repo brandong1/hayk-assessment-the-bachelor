@@ -11,6 +11,7 @@ end
   #     return contestant_data[:name] if name[:state] == "Winner"  
   #   end
   #   binding.pry
+
    
 
   # data.each do |season, winner|
@@ -21,7 +22,7 @@ end
   #   end
 
 def get_contestant_name(data, occupation)
-  # code here
+  
 end
 
 def count_contestants_by_hometown(data, hometown)
