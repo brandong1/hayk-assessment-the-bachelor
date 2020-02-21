@@ -1,10 +1,23 @@
 require 'pry'
-def get_first_name_of_season_winner(data, season)
-  data[season].each do |contestant_hash|
-    if contestant_hash["status"] == "Winner"
-      return contestant_hash["name"].split(" ").first
+
+#helper methods
+def iterate_through_season(season, value)
+  season.each do |contestant_hash| #undefined method `each' for nil:NilClass
+    contestant_hash.select do |contestant, name|
+      return contestant[value] if contestant[value] == name #TypeError: no implicit conversion of Symbol into Integer
     end
   end
+end
+
+####################
+
+def get_first_name_of_season_winner(season, data)
+  iterate_through_season(season, data)
+  # data[season].each do |contestant_hash|
+  #   if contestant_hash["status"] == "Winner"
+  #     return contestant_hash["name"].split(" ").first
+  #   end
+  # end
 end
   # data.each do |season_name, contestant_data|
   #   contestant_data.each do |name|
